@@ -1,0 +1,31 @@
+
+def turn_right():
+   turn_left()
+   turn_left()
+   turn_left()
+        
+def move_f(steps):
+    counter = 0
+    while counter < steps:
+        move()
+        counter += 1
+        
+move_f(3)
+turn_left()
+move_f(2)
+take()
+turn_right()
+move_f(4)
+put()
+turn_right()
+move_f(2)
+take()
+turn_right()
+move_f(2)
+turn_left()
+move_f(3)
+put()
+move()
+
+
+
