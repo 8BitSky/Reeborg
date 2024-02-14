@@ -1,5 +1,7 @@
+#Basic Variables
 entered_house = False
 
+#Basic Functions
 def turn_around():
     repeat 2:
         turn_left()
@@ -54,6 +56,8 @@ def close_window():
         build_wall()
         turn_left()
 
+
+#Basic Program
 think(50)
 enter_house(entered_house)
 
