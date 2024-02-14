@@ -1,0 +1,63 @@
+entered_house = False
+
+def turn_around():
+    repeat 2:
+        turn_left()
+
+def turn_right():
+    repeat 3:
+        turn_left()
+
+def lost_wall():
+    if not wall_on_right():
+        return True
+    else:
+        return False
+        
+def enter_house(entered_house):
+    while not entered_house:
+        while not at_goal():
+            move()
+        turn_right()
+        move()
+        entered_house = True
+        
+def stop_rain():
+    if at_goal():
+        done()
+    while front_is_clear() and not lost_wall():
+        move()
+        if right_is_clear():
+            if check_window():
+                close_window()
+            else:
+                turn_right()
+                move()
+    if not front_is_clear() and not right_is_clear():
+         turn_left()
+            
+def check_window():
+    move()
+    if right_is_clear():
+        turn_around()
+        move()
+        turn_around()
+        return False
+    else: 
+        turn_around()
+        move()
+        turn_around()
+        return True
+
+def close_window():
+        turn_right()
+        build_wall()
+        turn_left()
+
+think(50)
+enter_house(entered_house)
+
+while not at_goal():
+    stop_rain()
+  
+    
