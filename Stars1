@@ -1,0 +1,33 @@
+def turn_right():
+    repeat 3: 
+        turn_left()
+        
+def create_star_tower():
+    turn_left()
+    repeat 3:
+        put()
+        move()
+    repeat 2:
+        turn_left()
+    repeat 3:
+        move()
+    turn_left()
+    walk_to_next_tower()
+
+def walk_to_next_tower():
+    steps = 0
+    repeat 2:
+        if front_is_clear():
+            move()
+            steps+=1
+            if steps == 2:
+                create_star_tower()
+        else:
+            done()
+        
+        
+think(50)
+
+create_star_tower()
+
+   
