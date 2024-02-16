@@ -1,0 +1,55 @@
+def turn_right():
+    repeat 3:
+        turn_left()
+
+
+
+def forward_search():
+    while front_is_clear():
+        if not object_here():
+            move()
+        else:
+            build_cross()
+    if object_here():
+        build_cross()
+    next_row()
+    
+def next_row():
+    turn_left()
+    if is_facing_north():
+        if front_is_clear():
+            move()
+            turn_left()
+            forward_search()
+        else:
+            done()
+    else:
+        repeat 2:
+            turn_left()
+        if front_is_clear():
+             move()
+             turn_right()
+             forward_search()
+        else:
+             done()
+
+def build_cross():
+    steps_to_return = 0  
+    repeat 4:
+        while front_is_clear():
+            move()
+            steps_to_return += 1
+        repeat 2:
+            turn_left()
+        while steps_to_return != 0:
+            put()
+            move()
+            steps_to_return -= 1
+        turn_left()
+    done()
+    
+    
+
+
+think(10)
+forward_search()
