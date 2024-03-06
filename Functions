@@ -1,0 +1,26 @@
+#Basic Function Approach
+#Completes a Task
+#def go_to_goal():
+#    repeat 6:
+#        move()    
+#go_to_goal()
+
+#Data Input Approach
+#Completes a task based on input of variable data
+#def go_to_goal(distance,speed):
+#   think(speed) 
+#   for x in range(distance):
+#        move()
+#go_to_goal(6,10)
+
+#Return Approach
+#Does a task and returns data out of the function!
+#def steps_to_take():
+#    return 6
+#
+#def go_to_goal(distance):
+#    for x in range(distance):
+#        move()
+#
+#steps = steps_to_take()
+#go_to_goal(steps)
